@@ -5,7 +5,16 @@
     "resist": "Resistance penalty after Act 5 (Kitava) and Act 10: -30% each, -60% total. Long-standing PoE1 rule; verify each league in patch notes.",
     "poetools": "poe-mono-repo docs/poe-knowledge/league-info.md (3.29 notes)",
     "5l-forum": "https://www.pathofexile.com/forum/view-thread/3915494 (3.27: Breaches in Slave Pens / A6 Twilight Strand dropped a guaranteed 5L; did not work in 3.28 Mirage)",
-    "5l-329": "3.29 build guides list both spots (e.g. https://mobalytics.gg/poe/builds/penance-brand-ignite-elementalist-league-starter, search snippet); Exile UI re-added both on 2026-07-27, 3 days after 3.29 launch (commit 1d35916f). Not in the 3.29 patch notes."
+    "5l-329": "3.29 build guides list both spots (e.g. https://mobalytics.gg/poe/builds/penance-brand-ignite-elementalist-league-starter, search snippet); Exile UI re-added both on 2026-07-27, 3 days after 3.29 launch (commit 1d35916f). Not in the 3.29 patch notes.",
+    "recipes": "poedb.tw/us/VendorRecipes + maxroll.gg/poe/resources/vendor-recipes (checked 2026-11-02)",
+    "boots-levels": "poedb boots movement-speed mod level requirements via maxroll leveling guide: 10% lvl 1, 15% 12, 20% 24, 25% 32, 30% 44",
+    "poe.re": "github.com/veiset/poe-vendor-string OutputString.ts patterns (Runn = Runner's 10%, rint = Sprinter's 15%)",
+    "3.29-vendors": "3.29.0 patch notes: all classes can buy Faster Attacks from Nessa (after The Caged Brute) and Faster Casting from Yeena (after Sharp and Cruel)",
+    "bench": "poedb.tw/us/Crafting_Bench: Four Linked Sockets 5 Fusing, unlocked in Kaom's Stronghold",
+    "levels": "maxroll campaign guide: be level 32 before Kaom's Stronghold",
+    "flasks": "maxroll / poe-vault leveling guides: Act 8 freeze (Lunaris side), Act 9 Belly of the Beast bleed; flask suffixes 'of Heat' (freeze immunity) and 'of Staunching' (bleed removal)",
+    "labs": "poedb area levels: Normal 33, Cruel 55, Merciless 68; creator guides: Normal lab after Act 3, Cruel after Act 7, Merciless after Act 10",
+    "maps": "maxroll.gg/poe/getting-started/atlas-explained (Kirac on Karui Shores gives a map device)"
   },
   "skillPointQuests": {
     "a1q7": {
@@ -157,6 +166,187 @@
         "source": "poedb crafting bench, 5l-forum, 5l-329",
         "verified": false
       }
+    ]
+  },
+  "reminders": [
+    {
+      "id": "ms-10",
+      "group": "ms-boots",
+      "kind": "gear",
+      "when": {
+        "questDone": "a1q5"
+      },
+      "text": "Movement speed boots: any normal boots + Quicksilver Flask + Orb of Augmentation at a vendor = 10% movement speed.",
+      "search": "\"Runn|rint\"",
+      "source": "recipes"
+    },
+    {
+      "id": "ms-15",
+      "group": "ms-boots",
+      "kind": "gear",
+      "when": {
+        "minLevel": 12,
+        "questDone": "a1q5"
+      },
+      "text": "Level 12: put your movement speed boots back in with another Quicksilver + Augmentation for 15%.",
+      "search": "\"Runn|rint\"",
+      "source": "recipes, boots-levels"
+    },
+    {
+      "id": "ms-20",
+      "group": "ms-boots",
+      "kind": "gear",
+      "when": {
+        "minLevel": 24
+      },
+      "text": "Level 24: boots + Quicksilver + Augmentation again for 20% movement speed.",
+      "source": "recipes, boots-levels"
+    },
+    {
+      "id": "ms-25",
+      "group": "ms-boots",
+      "kind": "gear",
+      "when": {
+        "minLevel": 32
+      },
+      "text": "Level 32: 25% movement speed boots are possible now (same recipe).",
+      "source": "recipes, boots-levels"
+    },
+    {
+      "id": "ms-30",
+      "group": "ms-boots",
+      "kind": "gear",
+      "when": {
+        "minLevel": 44
+      },
+      "text": "Level 44: 30% movement speed boots are possible now (same recipe).",
+      "source": "recipes, boots-levels"
+    },
+    {
+      "id": "weapon-magic",
+      "group": "weapon",
+      "kind": "gear",
+      "when": {
+        "minAct": 2
+      },
+      "text": "Weapon upgrade: your weapon + a magic Rustic Sash + Blacksmith's Whetstone = 40-49% increased Physical Damage. Spell weapons: Chain Belt instead of the sash.",
+      "search": "\"Rustic|Chain Belt\"",
+      "source": "recipes"
+    },
+    {
+      "id": "weapon-rare",
+      "group": "weapon",
+      "kind": "gear",
+      "when": {
+        "minAct": 4
+      },
+      "text": "Weapon upgrade: a rare Rustic Sash in the recipe gives 50-69% increased Physical Damage.",
+      "search": "\"Rustic\"",
+      "source": "recipes"
+    },
+    {
+      "id": "faster-attacks",
+      "kind": "vendor",
+      "when": {
+        "questDone": "a1q2",
+        "maxAct": 2
+      },
+      "text": "3.29: every class can buy Faster Attacks Support from Nessa now.",
+      "source": "3.29-vendors"
+    },
+    {
+      "id": "faster-casting",
+      "kind": "vendor",
+      "when": {
+        "questDone": "a2q4",
+        "maxAct": 3
+      },
+      "text": "3.29: every class can buy Faster Casting Support from Yeena now.",
+      "source": "3.29-vendors"
+    },
+    {
+      "id": "bench-4l",
+      "kind": "gear",
+      "when": {
+        "reachedArea": "1_4_4_3",
+        "maxAct": 6
+      },
+      "text": "Kaom's Stronghold unlocked the bench 4-link: craft it on your body armour for 5 Orbs of Fusing.",
+      "source": "bench"
+    },
+    {
+      "id": "level-kaom",
+      "kind": "level",
+      "when": {
+        "upcomingArea": "1_4_4_3",
+        "belowLevel": 32
+      },
+      "text": "Be level 32 before Kaom's Stronghold: the fights there are much harder below it.",
+      "source": "levels"
+    },
+    {
+      "id": "danger-freeze",
+      "kind": "danger",
+      "when": {
+        "upcomingArea": "2_8_6"
+      },
+      "text": "Lunaris side of Act 8 freezes a lot: a life flask with the 'of Heat' suffix (freeze immunity) helps.",
+      "source": "flasks"
+    },
+    {
+      "id": "danger-bleed",
+      "kind": "danger",
+      "when": {
+        "upcomingArea": "2_9_10_1"
+      },
+      "text": "The Belly of the Beast (Act 9) makes you bleed: bring a flask with the 'of Staunching' suffix.",
+      "source": "flasks"
+    },
+    {
+      "id": "kitava-a5",
+      "kind": "danger",
+      "when": {
+        "minAct": 5,
+        "maxAct": 5
+      },
+      "text": "Act 5 ends with Kitava: afterwards your resistances drop by 30%. Gear up resistances before the fight.",
+      "source": "resist"
+    },
+    {
+      "id": "kitava-a10",
+      "kind": "danger",
+      "when": {
+        "minAct": 10,
+        "maxAct": 10
+      },
+      "text": "Act 10 Kitava drops your resistances by another 30% (-60% total). Cap them for maps.",
+      "source": "resist"
+    }
+  ],
+  "labs": {
+    "normal": {
+      "areaLevel": 33,
+      "text": "Normal Labyrinth (area level 33): do it after Act 3 for your first 2 ascendancy points."
+    },
+    "cruel": {
+      "areaLevel": 55,
+      "text": "Cruel Labyrinth (area level 55): do it after Act 7."
+    },
+    "merciless": {
+      "areaLevel": 68,
+      "text": "Merciless Labyrinth (area level 68): do it after Act 10."
+    },
+    "source": "labs"
+  },
+  "mapsChecklist": {
+    "source": "maps, labs, resist",
+    "items": [
+      "Talk to Kirac on Karui Shores: he gives you a map device for your hideout.",
+      "Run Merciless Labyrinth (area level 68) if you haven't.",
+      "Cap your elemental resistances: you are at -60% now.",
+      "Set your pantheon gods (talk to Sin) and upgrade them with a Divine Vessel later.",
+      "Switch your loot filter to a stricter level once mapping (NeverSink switches to endgame rules at item level 68 by itself).",
+      "Start your atlas passive tree: complete each new map for bonus objectives."
     ]
   }
 }

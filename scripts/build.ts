@@ -60,7 +60,11 @@ function loadGame(game: string) {
       ? readFileSync(knownPath, "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))
       : [],
   );
-  const campaign = readJson<{ skillPointQuests: Record<string, { points: number; note: string }> }>(join(dir, "campaign.json"));
+  const campaign = readJson<{
+    skillPointQuests: Record<string, { points: number; note: string }>;
+    reminders?: { id: string; when: Record<string, unknown> }[];
+    league?: { notes: { id: string; area?: string }[] };
+  }>(join(dir, "campaign.json"));
   return { manifest, data, routes, routeFiles, known, campaign };
 }
 
@@ -85,6 +89,28 @@ for (const game of ["poe1"]) {
   const { manifest, data, routes, known, campaign } = loadGame(game);
   const seen = new Set<string>();
   let stepCount = 0;
+  // Every id that campaign.json points at must exist in the game data.
+  const areaIds = new Set(Object.keys(data.Areas));
+  for (const r of campaign.reminders ?? []) {
+    for (const key of ["reachedArea", "upcomingArea"] as const) {
+      const v = r.when[key] as string | undefined;
+      if (v && !areaIds.has(v)) {
+        console.error(`[${game}] ERROR reminder ${r.id}: unknown area ${v}`);
+        failed = true;
+      }
+    }
+    const q = r.when.questDone as string | undefined;
+    if (q && !data.Quests[q]) {
+      console.error(`[${game}] ERROR reminder ${r.id}: unknown quest ${q}`);
+      failed = true;
+    }
+  }
+  for (const n of campaign.league?.notes ?? []) {
+    if (n.area && !areaIds.has(n.area)) {
+      console.error(`[${game}] ERROR league note ${n.id}: unknown area ${n.area}`);
+      failed = true;
+    }
+  }
   for (const options of optionMatrix()) {
     const guide = compileGuide(routes, data, options);
     stepCount = Math.max(stepCount, guide.steps.length);
