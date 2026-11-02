@@ -14,7 +14,8 @@
     "levels": "maxroll campaign guide: be level 32 before Kaom's Stronghold",
     "flasks": "maxroll / poe-vault leveling guides: Act 8 freeze (Lunaris side), Act 9 Belly of the Beast bleed; flask suffixes 'of Heat' (freeze immunity) and 'of Staunching' (bleed removal)",
     "labs": "poedb area levels: Normal 33, Cruel 55, Merciless 68; creator guides: Normal lab after Act 3, Cruel after Act 7, Merciless after Act 10",
-    "maps": "maxroll.gg/poe/getting-started/atlas-explained (Kirac on Karui Shores gives a map device)"
+    "maps": "maxroll.gg/poe/getting-started/atlas-explained (Kirac on Karui Shores gives a map device)",
+    "zone-tips": "Written by the Exile Overlay team. 'verified: false' = not yet checked in game; the overlay labels them 'unchecked'. Never copied from other guides (Cyclon, Mobalytics, XileHUD are unlicensed or GPL)."
   },
   "skillPointQuests": {
     "a1q7": {
@@ -348,5 +349,31 @@
       "Switch your loot filter to a stricter level once mapping (NeverSink switches to endgame rules at item level 68 by itself).",
       "Start your atlas passive tree: complete each new map for bonus objectives."
     ]
+  },
+  "zoneTips": {
+    "1_1_1": {
+      "text": "Hillock waits at the far end of the beach, just before the gate to Lioneye's Watch. Skip the other monsters.",
+      "verified": false
+    },
+    "1_1_5": {
+      "text": "The Ledge is one long cliff path: keep going in one direction, the exit to The Climb is at the far end.",
+      "verified": false
+    },
+    "1_2_1": {
+      "text": "The Southern Forest is a short path from Act 1: follow it to the Forest Encampment.",
+      "verified": false
+    },
+    "1_2_3": {
+      "text": "The Crossroads is a hub: its exits lead to The Broken Bridge, The Fellshrine Ruins, The Chamber of Sins and The Western Forest side. Grab the waypoint, you will come back here.",
+      "verified": false
+    },
+    "1_3_1": {
+      "text": "The City of Sarn starts Act 3: save Clarissa from the guards near the start, then head on to the Sarn Encampment.",
+      "verified": false
+    },
+    "1_3_7": {
+      "text": "The Battlefront is a hub for the docks and the Solaris side: take the waypoint, you will pass it several times.",
+      "verified": false
+    }
   }
 }

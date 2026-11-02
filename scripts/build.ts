@@ -105,6 +105,16 @@ for (const game of ["poe1"]) {
       failed = true;
     }
   }
+  for (const [area, tip] of Object.entries((campaign as { zoneTips?: Record<string, { text: string; verified?: boolean }> }).zoneTips ?? {})) {
+    if (!areaIds.has(area)) {
+      console.error(`[${game}] ERROR zone tip: unknown area ${area}`);
+      failed = true;
+    }
+    if (typeof tip.verified !== "boolean") {
+      console.error(`[${game}] ERROR zone tip ${area}: set "verified" (true only after checking in game)`);
+      failed = true;
+    }
+  }
   for (const n of campaign.league?.notes ?? []) {
     if (n.area && !areaIds.has(n.area)) {
       console.error(`[${game}] ERROR league note ${n.id}: unknown area ${n.area}`);
