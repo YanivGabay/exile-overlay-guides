@@ -26,6 +26,13 @@ Each line is one step. Tokens in braces are checked against the game data:
 
 The validator simulates the route: you can only enter connected areas, use waypoints you have, and so on.
 
+## How it ships
+
+CI validates every pull request. Each push to `main` builds `dist/poe1.json` and publishes
+it to the `bundles` branch; the app checks that file every 30 minutes, so route fixes reach
+players without an app update. `vendor/route-engine.tgz` is the route engine from the app
+repo (refresh with `scripts/pack-engine.sh` there).
+
 ## Contributing
 
 1. Edit a route file.

@@ -8,9 +8,12 @@
     "build": "tsx scripts/build.ts"
   },
   "dependencies": {
-    "@exile-overlay/route-engine": "file:../exile-overlay/packages/route-engine"
+    "@exile-overlay/route-engine": "file:vendor/route-engine.tgz"
   },
   "devDependencies": {
     "tsx": "^4.23.15"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }
