@@ -105,14 +105,23 @@ for (const game of ["poe1"]) {
       failed = true;
     }
   }
-  for (const [area, tip] of Object.entries((campaign as { zoneTips?: Record<string, { text: string; verified?: boolean }> }).zoneTips ?? {})) {
+  type Tip = { text: string; verified?: boolean; sources?: string[] };
+  const creditKeys = new Set(((campaign as { credits?: { key: string }[] }).credits ?? []).map((c) => c.key));
+  for (const [area, list] of Object.entries((campaign as { zoneTips?: Record<string, Tip[]> }).zoneTips ?? {})) {
     if (!areaIds.has(area)) {
       console.error(`[${game}] ERROR zone tip: unknown area ${area}`);
       failed = true;
     }
-    if (typeof tip.verified !== "boolean") {
-      console.error(`[${game}] ERROR zone tip ${area}: set "verified" (true only after checking in game)`);
-      failed = true;
+    for (const tip of list) {
+      if (typeof tip.verified !== "boolean") {
+        console.error(`[${game}] ERROR zone tip ${area}: set "verified" (true only after checking in game)`);
+        failed = true;
+      }
+      for (const src of tip.sources ?? [])
+        if (!creditKeys.has(src)) {
+          console.error(`[${game}] ERROR zone tip ${area}: source ${src} missing from credits`);
+          failed = true;
+        }
     }
   }
   for (const n of campaign.league?.notes ?? []) {

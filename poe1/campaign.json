@@ -322,6 +322,103 @@
       },
       "text": "Act 10 Kitava drops your resistances by another 30% (-60% total). Cap them for maps.",
       "source": "resist"
+    },
+    {
+      "id": "lvl-brutus",
+      "kind": "level",
+      "when": {
+        "upcomingArea": "1_1_7_2",
+        "belowLevel": 8
+      },
+      "text": "Brutus (Upper Prison): aim for level 8.",
+      "source": "EL, TYT, HV (see credits)"
+    },
+    {
+      "id": "lvl-merveil",
+      "kind": "level",
+      "when": {
+        "upcomingArea": "1_1_11_2",
+        "belowLevel": 12
+      },
+      "text": "Merveil (Cavern of Anger): aim for level 12 and some cold resistance.",
+      "source": "EL, TYT, HV (see credits)"
+    },
+    {
+      "id": "lvl-fidelitas",
+      "kind": "level",
+      "when": {
+        "upcomingArea": "1_2_6_2",
+        "belowLevel": 14
+      },
+      "text": "Fidelitas (Chamber of Sins 2): aim for level 14-15.",
+      "source": "EL, TYT, HV (see credits)"
+    },
+    {
+      "id": "lvl-weaver",
+      "kind": "level",
+      "when": {
+        "upcomingArea": "1_2_10",
+        "belowLevel": 16
+      },
+      "text": "The Weaver: aim for level 16.",
+      "source": "EL, TYT, HV (see credits)"
+    },
+    {
+      "id": "lvl-oversoul",
+      "kind": "level",
+      "when": {
+        "upcomingArea": "1_2_14_3",
+        "belowLevel": 20
+      },
+      "text": "Vaal Oversoul (Ancient Pyramid): aim for level 20-22.",
+      "source": "EL, TYT, HV (see credits)"
+    },
+    {
+      "id": "lvl-piety",
+      "kind": "level",
+      "when": {
+        "upcomingArea": "1_3_14_2",
+        "belowLevel": 27
+      },
+      "text": "Piety (Lunaris Temple 2): aim for level 27-28.",
+      "source": "EL, TYT, HV (see credits)"
+    },
+    {
+      "id": "safe-res-merveil",
+      "kind": "danger",
+      "presets": [
+        "safe",
+        "new"
+      ],
+      "when": {
+        "upcomingArea": "1_1_11_2"
+      },
+      "text": "Merveil hits with cold: get some cold resistance before the fight.",
+      "source": "MXC"
+    },
+    {
+      "id": "safe-res-kaom",
+      "kind": "danger",
+      "presets": [
+        "safe"
+      ],
+      "when": {
+        "upcomingArea": "1_4_4_3"
+      },
+      "text": "Before Kaom: check fire resistance (his attacks and the arena are fire-heavy).",
+      "source": "HV, MXC"
+    },
+    {
+      "id": "safe-res-daresso",
+      "kind": "danger",
+      "presets": [
+        "safe"
+      ],
+      "when": {
+        "upcomingArea": "1_4_5_1"
+      },
+      "text": "Before Daresso: top up resistances and flasks; it is the hardest fight of Act 4 for many builds.",
+      "source": "MXC"
     }
   ],
   "labs": {
@@ -351,29 +448,967 @@
     ]
   },
   "zoneTips": {
-    "1_1_1": {
-      "text": "Hillock waits at the far end of the beach, just before the gate to Lioneye's Watch. Skip the other monsters.",
-      "verified": false
+    "1_1_1": [
+      {
+        "text": "Hillock waits at the far end of the beach, just before the gate to Lioneye's Watch. Skip the other monsters.",
+        "verified": false,
+        "sources": [],
+        "confidence": "low",
+        "style": "all"
+      },
+      {
+        "text": "Bind left click to move-only, skip most mobs and keep your flask charges for Hillock. The big chest mid-beach holds your first support gem.",
+        "style": "all",
+        "sources": [
+          "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_1_5": [
+      {
+        "text": "The Ledge is one long cliff path: keep going in one direction, the exit to The Climb is at the far end.",
+        "verified": false,
+        "sources": [],
+        "confidence": "low",
+        "style": "all"
+      }
+    ],
+    "1_2_1": [
+      {
+        "text": "The Southern Forest is a short path from Act 1: follow it to the Forest Encampment.",
+        "verified": false,
+        "sources": [],
+        "confidence": "low",
+        "style": "all"
+      }
+    ],
+    "1_2_3": [
+      {
+        "text": "The Crossroads is a hub: its exits lead to The Broken Bridge, The Fellshrine Ruins, The Chamber of Sins and The Western Forest side. Grab the waypoint, you will come back here.",
+        "verified": false,
+        "sources": [],
+        "confidence": "low",
+        "style": "all"
+      },
+      {
+        "text": "Follow the road to the waypoint. Chamber of Sins is to the NW (the left path). Fellshrine Ruins is to the SE and is needed only for the Crypt trial and Golden Hand.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_1": [
+      {
+        "text": "The City of Sarn starts Act 3: save Clarissa from the guards near the start, then head on to the Sarn Encampment.",
+        "verified": false,
+        "sources": [],
+        "confidence": "low",
+        "style": "all"
+      },
+      {
+        "text": "Save Clarissa and talk to her (needed for the Sewer Keys later). Then take the small stairs and follow the water to town.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_7": [
+      {
+        "text": "The Battlefront is a hub for the docks and the Solaris side: take the waypoint, you will pass it several times.",
+        "verified": false,
+        "sources": [],
+        "confidence": "low",
+        "style": "all"
+      },
+      {
+        "text": "The waypoint is roughly central or northern. The Ribbon Spool cart is below it (SW), and the Docks are to the NW or left. Skip Captain Aurelianus.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_1_2": [
+      {
+        "text": "League start: take the Coast waypoint, then go to Tidal Island before Mud Flats. Alt or race runs without the toggle skip both.",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_1_2a": [
+      {
+        "text": "Hailrake is usually to the west. If you hit a ledge, turn around and go east. Kill him, take the Medicine Chest, then log out instead of walking back.",
+        "style": "race/safe",
+        "sources": [
+          "EL",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      },
+      {
+        "text": "Recommended level for Hailrake is about 4.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_1_3": [
+      {
+        "text": "The three Rhoa nests sit along small streams. They usually form a triangle and rarely a straight line, so follow the water between them.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_1_3a": [
+      {
+        "text": "Optional. Clearing it gives only 2 respec points, so it is a skip for speed runs.",
+        "style": "new",
+        "sources": [
+          "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_1_4_1": [
+      {
+        "text": "Drop a portal at the bridge where the Flooded Depths entrance is. You come back to that spot later.",
+        "style": "race/safe",
+        "sources": [
+          "EL",
+          "HV",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_1_4_0": [
+      {
+        "text": "The entrance is on the right of the bridge. The Dweller is usually opposite the entrance, in a big open room. He gives a passive point, so never skip him.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_1_6": [
+      {
+        "text": "Ironpoint and The Faun are optional. Run past them.",
+        "style": "race/safe",
+        "sources": [
+          "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_1_7_1": [
+      {
+        "text": "Do the Labyrinth trial here on your first character of the league (it is usually NE). Later characters skip it, because trials count once per league.",
+        "style": "new/safe",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_1_7_2": [
+      {
+        "text": "Look for the Chemist's Strongbox marked on the map; a nearby switch opens it. It often drops Quicksilver Flasks, which feed the movement-speed boots recipe.",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "HV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_1_9": [
+      {
+        "text": "From Prisoner's Gate, Ship Graveyard is down the ledge or gorge next to the road. Its waypoint is usually close to the entrance.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      },
+      {
+        "text": "Get the Allflame from the cave first and drop a portal at the cave if you spot it, then kill Fairgraves.",
+        "style": "all",
+        "sources": [
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_1_11_1": [
+      {
+        "text": "Skip the Amarissa chest.",
+        "style": "race",
+        "sources": [
+          "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_1_11_2": [
+      {
+        "text": "Follow the water to reach the exit and Merveil's arena. Aim for about level 12 and bring some cold resistance.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_2": [
+      {
+        "text": "The exit to Crossroads is to the NE (\"right exit\"). League start: drop a portal at the Den entrance on the way.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_2a": [
+      {
+        "text": "Optional. Killing the Great White Beast gives a guaranteed second Quicksilver. League starters use the portal and log out after; alts skip it.",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "HV",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_6_2": [
+      {
+        "text": "Head the same way as the waypoint. Fidelitas is at the end of a long corridor. Aim for level 14-15. Do the trial here on a league start.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV",
+          "TYT"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_4": [
+      {
+        "text": "Near the waypoint, three rogue Exiles drop a full set of gear. It is a reliable way to get bases early.",
+        "style": "safe",
+        "sources": [
+          "HV"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_2_7": [
+      {
+        "text": "The waypoint and the exit both follow the road (SW from Crossroads). A Breach is often on the path here and is worth the XP and loot.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_10": [
+      {
+        "text": "The Weaver's Chambers entrance is on the side of the road opposite the waypoint, along the wall of webbed trees. Aim for level 16 at the Weaver.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV",
+          "TYT"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_9": [
+      {
+        "text": "Alira's camp sits along the map wall by the waypoint road. Look for the torch touching the road and follow its trail. Arteri (Thaumetic Emblem) is farther along the road to the SW.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_12": [
+      {
+        "text": "Find the two pillars near the waypoint and follow the trail. Oak is usually on the side away from the town entrance.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_8": [
+      {
+        "text": "The path to the exit makes an S or L shape. Skip Dread Thicket in Act 2 unless you want its hideout.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_2_14_3": [
+      {
+        "text": "The first-floor exit is in one of three corners. Each later floor exits diagonally across from where you came in. Aim for level 20-22 at Vaal Oversoul.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "TYT"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_3_1": [
+      {
+        "text": "Slums: head N. In the Crematorium follow the stairs, do the trial (league start), kill Piety and take Tolman's Bracelet, then log out.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_10_1": [
+      {
+        "text": "There are 3 busts: one before the waypoint and two after it. Later, the Undying Blockage is right next to the waypoint.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_6": [
+      {
+        "text": "The Catacombs is next to the Marketplace waypoint. Enter only for the trial (league start), then log out.",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_9": [
+      {
+        "text": "If you are under-levelled, clear here to catch up. The unique mob drops a guaranteed Essence on first click. Reset the zone to reroll which Essence you get.",
+        "style": "safe",
+        "sources": [
+          "HV",
+          "PV"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_3_8_2": [
+      {
+        "text": "Take the crafting recipe beside Lady Dialla (flat fire to spells is T1, 4 Transmutes). A rare Jade Amulet is also available here.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_13": [
+      {
+        "text": "Gravicius is optional for the quest but gives a gem reward. Most racers kill him on the way since he is near the route (NW).",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_14_2": [
+      {
+        "text": "Take the stairs that go up. At the wagon fork, take the side with one wagon (two wagons is a dead end). Piety drops the Tower Key. Aim for about level 27-28.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_15": [
+      {
+        "text": "The trial is almost always in the top-left (N) area. The Library is up the stairs at the upper-left fork. The Sceptre of God is lower-right, then up and right.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_3_18_2": [
+      {
+        "text": "The stairs up are in one of the corners. On the rooftop, Dominus is past the barricades.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_4_1": [
+      {
+        "text": "Run past the Hundred Foot Shadow. The Highgate entrance is at the end of the left lane.",
+        "style": "all",
+        "sources": [
+          "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_4_3_3": [
+      {
+        "text": "Do the Normal Lab here in Act 4, at around level 31-33, once the three Act 1-3 trials are done. The Cold craft sits beside the Crystal Veins waypoint.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV",
+          "MXB",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_4_4_3": [
+      {
+        "text": "Head NE and follow the bridges.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_4_6_3": [
+      {
+        "text": "Doedre is the hardest of the three organ bosses. The Black Core door is next to the Harvest waypoint.",
+        "style": "all",
+        "sources": [
+          "MXC",
+          "PV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_5_1": [
+      {
+        "text": "Go S until the hanged Karui corpse, then loop clockwise toward the W to find Krow.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "1_5_2": [
+      {
+        "text": "The Miasmeter (passive point) is far W. Casticus is NE of the Miasmeter.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_5_5": [
+      {
+        "text": "Loop clockwise. It has guaranteed magic packs, so it is the Act 5 farm spot (about 40-42). Avarius's arena is a counter-clockwise spiral to the NW.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "1_5_7": [
+      {
+        "text": "The three Kitava's Torments sit in the map corners. Drop a portal at the Cathedral Rooftop entrance first so you can return straight there.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_6_1": [
+      {
+        "text": "Clear it once per league to unlock Lilly Roth's gem vendor.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_6_4": [
+      {
+        "text": "The Dishonoured Queen is usually in the NE corner, near a house.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_6_5": [
+      {
+        "text": "Tukohama is NE. On league start, kill the pack on the SW island for a Tattoo.",
+        "style": "safe",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_6_14": [
+      {
+        "text": "Follow the shore. Put down a safety portal while escorting the fuel pylons, because the spawned waves hit hard.",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "HV",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_7_1": [
+      {
+        "text": "On league start, grab the Silver Locket by following the road to the broken waypoint. It leads to a free flask reward.",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "HV",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_7_5_map": [
+      {
+        "text": "Hug the zone edges. The bridges are usually in opposite diagonal corners.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_7_5_2": [
+      {
+        "text": "3.29 campaign secret: a switch hidden behind the trial plaque opens a room with a Hidden Gem (Quality).",
+        "style": "safe",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_7_9": [
+      {
+        "text": "If you see the entrance while heading to the Causeway, drop a portal. The T2 fire craft is near Dreadstone.",
+        "style": "all",
+        "sources": [
+          "HV"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_7_12_1": [
+      {
+        "text": "In the room with the central pit, a side room to the SW or NE holds a corrupted unique.",
+        "style": "safe",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_8_2_2": [
+      {
+        "text": "Black paint splashes on the floor point the way. Ignore the valves and burst Doedre.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_8_8": [
+      {
+        "text": "Follow the W wall to the Sealed Casket (Ankh). The Resurrection Site is SE.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_8_10": [
+      {
+        "text": "Follow the dead guards lying in doorways. The Legionnaires show as a book icon.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_8_13": [
+      {
+        "text": "On the final return, ctrl+click the entrance to open a fresh instance for extra XP.",
+        "style": "race/safe",
+        "sources": [
+          "HV"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_9_1": [
+      {
+        "text": "The usual farm before maps (about 58-62). It is also the Humility card farm.",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "HV",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_9_6": [
+      {
+        "text": "The Basilisk is NE. Petrified soldiers mark the way.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_9_7": [
+      {
+        "text": "3.29 secret: on the way to the trial plaque (opposite corner), a hidden switch opens a Hidden Gem (Transfigured).",
+        "style": "safe",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_9_9": [
+      {
+        "text": "Adus is NE along the cart tracks. The sewer grate to the Refinery Tunnels (craft) is attached to the tracks.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_9_5": [
+      {
+        "text": "Boulderback is optional; he can drop a 2-respec item. Skip him for speed.",
+        "style": "new",
+        "sources": [
+          "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_10_2": [
+      {
+        "text": "Drop a portal in the plaza, waypoint out, then come back through the portal. The Control Blocks are S and Vilenta is NE inside.",
+        "style": "all",
+        "sources": [
+          "EL",
+          "HV"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_10_9": [
+      {
+        "text": "It holds the last trial needed for Merciless Lab. 3.29 secret: a switch before the zig-zag walls opens a Hidden Gem (Facetor's Lens).",
+        "style": "safe",
+        "sources": [
+          "EL",
+          "MXC"
+        ],
+        "confidence": "high",
+        "verified": false
+      }
+    ],
+    "2_10_4": [
+      {
+        "text": "Courts exit is SE. Loop the Chambers clockwise. Avarius is again in a NW counter-clockwise spiral.",
+        "style": "all",
+        "sources": [
+          "EL"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_10_5": [
+      {
+        "text": "Mobs hit very hard. Slow down here.",
+        "style": "new/safe",
+        "sources": [
+          "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ]
+  },
+  "credits": [
+    {
+      "key": "EL",
+      "title": "exile-leveling route",
+      "creator": "HeartofPhos",
+      "url": "https://github.com/HeartofPhos/exile-leveling",
+      "license": "MIT"
     },
-    "1_1_5": {
-      "text": "The Ledge is one long cliff path: keep going in one direction, the exit to The Climb is at the far end.",
-      "verified": false
+    {
+      "key": "HV",
+      "title": "Maxroll class leveling guides (3.29)",
+      "creator": "havoc616",
+      "url": "https://maxroll.gg/poe/build-guides/ranger-leveling-build-guide"
     },
-    "1_2_1": {
-      "text": "The Southern Forest is a short path from Act 1: follow it to the Forest Encampment.",
-      "verified": false
+    {
+      "key": "MXC",
+      "title": "Maxroll campaign guide",
+      "creator": "Crouching_Tuna",
+      "url": "https://maxroll.gg/poe/getting-started/campaign-guide"
     },
-    "1_2_3": {
-      "text": "The Crossroads is a hub: its exits lead to The Broken Bridge, The Fellshrine Ruins, The Chamber of Sins and The Western Forest side. Grab the waypoint, you will come back here.",
-      "verified": false
+    {
+      "key": "MXB",
+      "title": "Maxroll build guides (lab timing)",
+      "creator": "Maxroll writers",
+      "url": "https://maxroll.gg/poe/getting-started/labyrinth"
     },
-    "1_3_1": {
-      "text": "The City of Sarn starts Act 3: save Clarissa from the guards near the start, then head on to the Sarn Encampment.",
-      "verified": false
+    {
+      "key": "PV",
+      "title": "PoE Vault quick reference leveling guide",
+      "creator": "Atroz",
+      "url": "https://www.poe-vault.com/guides/quick-reference-leveling-guide-act-1"
     },
-    "1_3_7": {
-      "text": "The Battlefront is a hub for the docks and the Solaris side: take the waypoint, you will pass it several times.",
-      "verified": false
+    {
+      "key": "PVB",
+      "title": "PoE Vault beginner leveling guide",
+      "creator": "Rootz",
+      "url": "https://www.poe-vault.com/guides/beginner-leveling-guide-for-path-of-exile"
+    },
+    {
+      "key": "TYT",
+      "title": "Forum summary of Tytykiller's HCSSF run (3.8)",
+      "creator": "Tytykiller (summary by The_Lavender_Xion)",
+      "url": "https://www.pathofexile.com/forum/view-thread/2679955"
+    },
+    {
+      "key": "F26",
+      "title": "Forum: tips to complete the campaign quickly (3.29)",
+      "creator": "community",
+      "url": "https://www.pathofexile.com/forum/view-thread/3984444"
+    },
+    {
+      "key": "poedb",
+      "title": "poedb game data",
+      "creator": "poedb",
+      "url": "https://poedb.tw/us/"
     }
-  }
+  ],
+  "presets": [
+    {
+      "id": "league-start",
+      "name": "League start",
+      "description": "Your first character this league: trials, Quicksilver flasks, optional rewards. Be level 32 before Kaom's Stronghold.",
+      "options": {
+        "leagueStart": true,
+        "library": false,
+        "bandit": "None"
+      },
+      "tipStyles": [
+        "all",
+        "safe",
+        "race"
+      ],
+      "view": "full"
+    },
+    {
+      "id": "speedrun",
+      "name": "Speedrun / alt character",
+      "description": "Trials and optional side areas off, logout after bosses, lowest level targets.",
+      "options": {
+        "leagueStart": false,
+        "library": false,
+        "bandit": "None"
+      },
+      "tipStyles": [
+        "all",
+        "race"
+      ],
+      "view": "compact"
+    },
+    {
+      "id": "safe",
+      "name": "SSF / hardcore-safe",
+      "description": "League start plus the Library for more gems, resistance checks before Merveil, Kaom, Daresso and Kitava.",
+      "options": {
+        "leagueStart": true,
+        "library": true,
+        "bandit": "None"
+      },
+      "tipStyles": [
+        "all",
+        "safe"
+      ],
+      "view": "full"
+    },
+    {
+      "id": "new",
+      "name": "First-time player",
+      "description": "Everything optional on, every hint shown, boss tips and level checks at zone level.",
+      "options": {
+        "leagueStart": true,
+        "library": false,
+        "bandit": "None"
+      },
+      "tipStyles": [
+        "all",
+        "safe",
+        "new"
+      ],
+      "view": "full"
+    }
+  ]
 }
