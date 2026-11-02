@@ -1,0 +1,54 @@
+{
+  "_sources": {
+    "poedb": "https://poedb.tw/us/Quest (game data: Book of Skill / Book of Regrets rewards), checked 2026-11-02",
+    "poedb-bandits": "https://poedb.tw/us/Deal_with_the_Bandits: 'Reward: The Apex, 1 Passive Skill Points'",
+    "resist": "Resistance penalty after Act 5 (Kitava) and Act 10: -30% each, -60% total. Long-standing PoE1 rule; verify each league in patch notes.",
+    "poetools": "poe-mono-repo docs/poe-knowledge/league-info.md (3.29 notes)"
+  },
+  "skillPointQuests": {
+    "a1q7": { "points": 1, "note": "The Dweller of the Deep" },
+    "a1q6": { "points": 1, "note": "The Marooned Mariner" },
+    "a1q9": { "points": 1, "note": "The Way Forward" },
+    "a2q5": { "points": 1, "note": "Through Sacred Ground" },
+    "a3q11": { "points": 1, "note": "Victario's Secrets" },
+    "a3q9": { "points": 1, "note": "Piety's Pets" },
+    "a4q6": { "points": 1, "note": "An Indomitable Spirit" },
+    "a5q3": { "points": 1, "note": "In Service to Science" },
+    "a5q7": { "points": 1, "note": "Kitava's Torments" },
+    "a6q3": { "points": 1, "note": "The Father of War" },
+    "a6q6": { "points": 1, "note": "The Puppet Mistress" },
+    "a6q7": { "points": 1, "note": "The Cloven One" },
+    "a7q1": { "points": 1, "note": "The Master of a Million Faces" },
+    "a7q6": { "points": 1, "note": "Kishara's Star" },
+    "a7q9": { "points": 1, "note": "Queen of Despair" },
+    "a8q4": { "points": 1, "note": "Reflection of Terror" },
+    "a8q6": { "points": 1, "note": "Love is Dead" },
+    "a8q7": { "points": 1, "note": "The Gemling Legion" },
+    "a9q2": { "points": 1, "note": "The Ruler of Highgate" },
+    "a9q5": { "points": 1, "note": "Queen of the Sands" },
+    "a10q3": { "points": 1, "note": "An End to Hunger" },
+    "a10q6": { "points": 1, "note": "Vilenta's Vengeance" }
+  },
+  "banditQuest": { "questId": "a2q7", "killAllPoints": 1, "source": "poedb-bandits" },
+  "respecQuests": ["a1q8", "a6q4", "a9q4", "a10q4"],
+  "resistPenalties": [
+    { "fromAct": 6, "total": -30, "text": "Your resistances are now 30% lower (Kitava's affliction). Check that your elemental resistances are still capped." },
+    { "fromAct": 11, "total": -60, "text": "Your resistances are now 60% lower in total. Cap them before mapping." }
+  ],
+  "league": {
+    "id": "3.29",
+    "name": "Curse of the Allflame",
+    "notes": [
+      {
+        "id": "white-sockets",
+        "text": "Sockets are white by default and accept any gem. Matching a gem's colour to a coloured socket gives a bonus. Any linked item is usable: don't skip links because of colours.",
+        "source": "poetools"
+      },
+      {
+        "id": "mercenaries",
+        "text": "Mercenaries of Trarthus are in the core game. They are temporary and leave after some areas unless you play the Luminary (Scion) ascendancy.",
+        "source": "poetools"
+      }
+    ]
+  }
+}

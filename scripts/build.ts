@@ -60,7 +60,8 @@ function loadGame(game: string) {
       ? readFileSync(knownPath, "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))
       : [],
   );
-  return { manifest, data, routes, routeFiles, known };
+  const campaign = readJson<{ skillPointQuests: Record<string, { points: number; note: string }> }>(join(dir, "campaign.json"));
+  return { manifest, data, routes, routeFiles, known, campaign };
 }
 
 function routeOrder(file: string): number {
@@ -81,12 +82,23 @@ let failed = false;
 mkdirSync(join(ROOT, "dist"), { recursive: true });
 
 for (const game of ["poe1"]) {
-  const { manifest, data, routes, known } = loadGame(game);
+  const { manifest, data, routes, known, campaign } = loadGame(game);
   const seen = new Set<string>();
   let stepCount = 0;
   for (const options of optionMatrix()) {
     const guide = compileGuide(routes, data, options);
     stepCount = Math.max(stepCount, guide.steps.length);
+    // Every route variant must hand in every quest that gives a passive point.
+    const handedIn = new Set<string>();
+    for (const s of guide.steps)
+      if (s.step.type === "fragment_step")
+        for (const p of s.step.parts) if (typeof p !== "string" && p.type === "quest") handedIn.add(p.questId);
+    for (const [q, info] of Object.entries(campaign.skillPointQuests)) {
+      if (!handedIn.has(q)) {
+        console.error(`[${game}] ERROR route skips passive-point quest ${q} (${info.note})  (options ${JSON.stringify(options)})`);
+        failed = true;
+      }
+    }
     for (const log of guide.logs) {
       const key = `${log.type}: ${log.msg}`;
       if (seen.has(key)) continue;
@@ -104,7 +116,7 @@ for (const game of ["poe1"]) {
     if (![...seen].some((k) => k.endsWith(msg)))
       console.warn(`[${game}] known warning no longer occurs, remove it: ${msg}`);
 
-  const content = { routes, data };
+  const content = { routes, data, campaign };
   const hash = createHash("sha256").update(JSON.stringify(content)).digest("hex").slice(0, 12);
   const bundle = {
     schema: 1,
