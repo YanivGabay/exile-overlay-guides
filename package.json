@@ -1,0 +1,16 @@
+{
+  "name": "exile-overlay-guides",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "check": "tsx scripts/build.ts --check",
+    "build": "tsx scripts/build.ts"
+  },
+  "dependencies": {
+    "@exile-overlay/route-engine": "file:../exile-overlay/packages/route-engine"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15"
+  }
+}

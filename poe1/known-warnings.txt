@@ -1,0 +1,12 @@
+# Warnings present in the imported exile-leveling route (2026-08-02, b7b2dd0).
+# The build fails on any warning NOT listed here. Fix and remove entries over time.
+missing crafting area 1_3_15, All Attributes - Rank 1
+missing crafting area 1_3_17_2, Life and Mana Regeneration - Rank 1
+missing crafting area 1_3_6, Elemental Damage with Attacks - Rank 1
+missing crafting area 2_10_9, Chaos Damage - Rank 2
+missing crafting area 2_7_4, Damage over Time - Rank 1
+missing crafting area 2_7_5_2, Mana Regen - Rank 1
+missing crafting area 2_8_5, Flask Duration - Rank 1
+missing crafting area 2_9_7, All Attributes - Rank 2
+missing crafting area EndGame_Labyrinth_boss_3, All Resistances - Rank 2
+unused waypoint 1_3_15

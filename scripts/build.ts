@@ -1,0 +1,125 @@
+/**
+ * Validate every route under every option combination, then write one
+ * bundle per game to dist/<game>.json. Exits non-zero on any parse error
+ * or on new warnings that are not listed in <game>/known-warnings.txt.
+ *
+ * Run: tsx scripts/build.ts [--check]
+ */
+import { createHash } from "node:crypto";
+import { mkdirSync, readFileSync, readdirSync, writeFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
+import {
+  compileGuide,
+  type Bandit,
+  type GameData,
+  type GuideOptions,
+} from "@exile-overlay/route-engine";
+
+const ROOT = new URL("..", import.meta.url).pathname;
+const checkOnly = process.argv.includes("--check");
+
+interface GameManifest {
+  game: "poe1" | "poe2";
+  gameVersion: string;
+  title: string;
+}
+
+const DATA_FILES: Record<keyof GameData.Bundle, string> = {
+  Areas: "areas.json",
+  Quests: "quests.json",
+  Gems: "gems.json",
+  KillWaypoints: "kill-waypoints.json",
+  Characters: "characters.json",
+  GemColours: "gem-colours.json",
+  AwakenedGemLookup: "awakened-gem-lookup.json",
+  VaalGemLookup: "vaal-gem-lookup.json",
+};
+
+function readJson<T>(path: string): T {
+  return JSON.parse(readFileSync(path, "utf8")) as T;
+}
+
+function loadGame(game: string) {
+  const dir = join(ROOT, game);
+  const manifest = readJson<GameManifest>(join(dir, "manifest.json"));
+  const data = Object.fromEntries(
+    Object.entries(DATA_FILES).map(([key, file]) => [
+      key,
+      readJson(join(dir, "data", file)),
+    ]),
+  ) as unknown as GameData.Bundle;
+
+  const routeFiles = readdirSync(join(dir, "routes"))
+    .filter((f) => f.endsWith(".txt"))
+    .sort((a, b) => routeOrder(a) - routeOrder(b));
+  const routes = routeFiles.map((f) => readFileSync(join(dir, "routes", f), "utf8"));
+
+  const knownPath = join(dir, "known-warnings.txt");
+  const known = new Set(
+    existsSync(knownPath)
+      ? readFileSync(knownPath, "utf8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))
+      : [],
+  );
+  return { manifest, data, routes, routeFiles, known };
+}
+
+function routeOrder(file: string): number {
+  const m = /(\d+)/.exec(file);
+  return m ? Number(m[1]) : 0;
+}
+
+function optionMatrix(): GuideOptions[] {
+  const out: GuideOptions[] = [];
+  const bandits: Bandit[] = ["None", "Oak", "Kraityn", "Alira"];
+  for (const leagueStart of [true, false])
+    for (const library of [true, false])
+      for (const bandit of bandits) out.push({ leagueStart, library, bandit });
+  return out;
+}
+
+let failed = false;
+mkdirSync(join(ROOT, "dist"), { recursive: true });
+
+for (const game of ["poe1"]) {
+  const { manifest, data, routes, known } = loadGame(game);
+  const seen = new Set<string>();
+  let stepCount = 0;
+  for (const options of optionMatrix()) {
+    const guide = compileGuide(routes, data, options);
+    stepCount = Math.max(stepCount, guide.steps.length);
+    for (const log of guide.logs) {
+      const key = `${log.type}: ${log.msg}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      if (log.type === "error") {
+        console.error(`[${game}] ERROR ${log.msg}  (options ${JSON.stringify(options)})`);
+        failed = true;
+      } else if (!known.has(log.msg)) {
+        console.error(`[${game}] new warning: ${log.msg}  (options ${JSON.stringify(options)})`);
+        failed = true;
+      }
+    }
+  }
+  for (const msg of known)
+    if (![...seen].some((k) => k.endsWith(msg)))
+      console.warn(`[${game}] known warning no longer occurs, remove it: ${msg}`);
+
+  const content = { routes, data };
+  const hash = createHash("sha256").update(JSON.stringify(content)).digest("hex").slice(0, 12);
+  const bundle = {
+    schema: 1,
+    game: manifest.game,
+    title: manifest.title,
+    gameVersion: manifest.gameVersion,
+    version: hash,
+    builtAt: new Date().toISOString(),
+    ...content,
+  };
+  console.log(`[${game}] ${routes.length} route files, up to ${stepCount} steps, version ${hash}`);
+  if (!checkOnly) writeFileSync(join(ROOT, "dist", `${game}.json`), JSON.stringify(bundle));
+}
+
+if (failed) {
+  console.error("validation failed");
+  process.exit(1);
+}
