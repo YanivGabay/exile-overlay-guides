@@ -1,6 +1,10 @@
 #section Act 6
 ➞ {enter|2_6_town} #Lioneye's Watch
 ➞ {enter|2_6_1} #The Twilight Strand
+#ifdef FIVE_LINK
+    Clear the {generic|league encounter} in this zone: it has dropped a {generic|5-link body armour}
+        #sub Once per character (3.27 and 3.29). If nothing drops, re-running the zone can help
+#endif
 Kill {kill|Everything}
 {logout}
 Hand in {quest|a6q4} #Fallen from Grace
@@ -11,14 +15,14 @@ Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest}
 ➞ {enter|2_6_5} #The Karui Fortress
 ➞ {arena|Tukohama's Keep}, kill {kill|Tukohama, Karui God of War}
     #sub Go {dir|45}
-#ifdef LEAGUE_START
+#ifdef EXTRAS
         #sub Find and kill the pack of monster on the island {dir|225} for a {generic|Tattoo}
 #endif
 Get {crafting}
 ➞ {enter|2_6_6} #The Ridge
     #sub Go {dir|0}
 ➞ {enter|2_6_7_1} #The Lower Prison
-#ifdef LEAGUE_START
+#ifdef TRIALS
     Complete {trial}
 #endif
 Get {crafting}

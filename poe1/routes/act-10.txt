@@ -12,7 +12,7 @@ Hand in {quest|a10q1} #Safe Passage
 Take {portal|use}
 Get {waypoint_get}
     #sub Go {dir|45}
-#ifdef LEAGUE_START
+#ifdef TRIALS
     ➞ {enter|2_10_9} #The Ossuary
     Get {crafting}
     Complete {trial}

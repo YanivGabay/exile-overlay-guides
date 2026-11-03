@@ -76,9 +76,14 @@ function routeOrder(file: string): number {
 function optionMatrix(): GuideOptions[] {
   const out: GuideOptions[] = [];
   const bandits: Bandit[] = ["None", "Oak", "Kraityn", "Alira"];
-  for (const leagueStart of [true, false])
-    for (const library of [true, false])
-      for (const bandit of bandits) out.push({ leagueStart, library, bandit });
+  const flags = [true, false];
+  for (const leagueStart of flags)
+    for (const library of flags)
+      for (const bandit of bandits)
+        for (const trials of flags)
+          for (const quicksilver of flags)
+            for (const fiveLink of flags)
+              for (const extras of flags) out.push({ leagueStart, library, bandit, trials, quicksilver, fiveLink, extras });
   return out;
 }
 

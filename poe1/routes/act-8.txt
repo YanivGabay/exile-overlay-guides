@@ -55,7 +55,7 @@ Kill {kill|Lunaris, Eternal Moon} & {kill|Solaris, Eternal Sun}
 {waypoint|2_8_6} #The Lunaris Concourse
 ➞ {enter|2_8_5} #The Bath House
     #sub Go {dir|180}
-#ifdef LEAGUE_START
+#ifdef TRIALS
     Complete {trial}
         #sub Search {dir|270} side
     Get {crafting}

@@ -1351,11 +1351,15 @@
     {
       "id": "league-start",
       "name": "League start",
-      "description": "Your first character this league: trials, Quicksilver flasks, optional rewards. Be level 32 before Kaom's Stronghold.",
+      "description": "Passive-point quests, Labyrinth trials, both Quicksilver flasks and the two 5-link league encounters. Side content off.",
       "options": {
         "leagueStart": true,
         "library": false,
-        "bandit": "None"
+        "bandit": "None",
+        "trials": true,
+        "quicksilver": true,
+        "fiveLink": true,
+        "extras": false
       },
       "tipStyles": [
         "all",
@@ -1367,11 +1371,15 @@
     {
       "id": "speedrun",
       "name": "Speedrun / alt character",
-      "description": "Trials and optional side areas off, logout after bosses, lowest level targets.",
+      "description": "Passive-point quests and the 5-link encounters only. No trials (already done this league), no flask detours, logout after bosses.",
       "options": {
         "leagueStart": false,
         "library": false,
-        "bandit": "None"
+        "bandit": "None",
+        "trials": false,
+        "quicksilver": false,
+        "fiveLink": true,
+        "extras": false
       },
       "tipStyles": [
         "all",
@@ -1382,11 +1390,15 @@
     {
       "id": "safe",
       "name": "SSF / hardcore-safe",
-      "description": "League start plus the Library for more gems, resistance checks before Merveil, Kaom, Daresso and Kitava.",
+      "description": "League start plus the Library (more gems) and side rewards (Chemist's Strongbox, tattoo, Silver Locket), with resistance checks before hard bosses.",
       "options": {
         "leagueStart": true,
         "library": true,
-        "bandit": "None"
+        "bandit": "None",
+        "trials": true,
+        "quicksilver": true,
+        "fiveLink": true,
+        "extras": true
       },
       "tipStyles": [
         "all",
@@ -1397,11 +1409,15 @@
     {
       "id": "new",
       "name": "First-time player",
-      "description": "Everything optional on, every hint shown, boss tips and level checks at zone level.",
+      "description": "Same stops as League start, with every hint and beginner tip shown.",
       "options": {
         "leagueStart": true,
         "library": false,
-        "bandit": "None"
+        "bandit": "None",
+        "trials": true,
+        "quicksilver": true,
+        "fiveLink": true,
+        "extras": false
       },
       "tipStyles": [
         "all",

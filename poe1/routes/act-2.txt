@@ -3,12 +3,12 @@
 ➞ {enter|1_2_town} #The Forest Encampment
 ➞ {enter|1_2_2} #The Old Fields
     #sub Go {dir|45}
-#ifdef LEAGUE_START
+#ifdef QUICKSILVER
     Find {area|1_2_2a}, place {portal|set} #The Den
 #endif
 ➞ {enter|1_2_3} #The Crossroads
     #sub Follow the road
-#ifdef LEAGUE_START
+#ifdef QUICKSILVER
     {waypoint|1_2_town} #The Forest Encampment
         #sub Follow the road
     Take {portal|use}
@@ -18,14 +18,14 @@
     Hand in {quest|a2q10} #The Great White Beast
     {waypoint|1_2_3} #The Crossroads
 #endif
-#ifndef LEAGUE_START
+#ifndef QUICKSILVER
     Get {waypoint_get}
 #endif
 ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
     #sub Go {dir|315}
 ➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
     #sub Go in same direction as {waypoint}
-#ifdef LEAGUE_START
+#ifdef TRIALS
     Complete {trial}
 #endif
 Kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
@@ -38,7 +38,7 @@ Hand in {quest|a2q6} #Intruders in Black
     #sub Go {dir|135}
 ➞ {enter|1_2_5_1} #The Crypt Level 1
     #sub Follow the road
-#ifdef LEAGUE_START
+#ifdef TRIALS
     Complete {trial}
 #endif
 ➞ {enter|1_2_5_2} #The Crypt Level 2

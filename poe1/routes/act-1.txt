@@ -3,15 +3,13 @@ Find and kill {kill|Hillock}
 ➞ {enter|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q1} #Enemy at the Gate
 ➞ {enter|1_1_2} #The Coast
-#ifdef LEAGUE_START
-    Get {waypoint_get}
-#endif
+Get {waypoint_get}
 ➞ {enter|1_1_3} #The Mud Flats
 Find 3x{quest_text|Glyph}
     #sub Little streams connect the 3 Rhoa nests
     #sub Usually form a triangle, but will rarely form a line
 ➞ {enter|1_1_4_1} #The Submerged Passage
-#ifdef LEAGUE_START
+#ifdef QUICKSILVER
     {waypoint|1_1_2} #The Coast
     ➞ {enter|1_1_2a} #The Tidal Island
     Find and kill {kill|Hailrake}, take {quest_text|Medicine Chest}
@@ -22,7 +20,7 @@ Find 3x{quest_text|Glyph}
     Hand in {quest|a1q4} #Breaking Some Eggs
     Hand in {quest|a1q5} #Mercy Mission
 #endif
-#ifndef LEAGUE_START
+#ifndef QUICKSILVER
     {waypoint|1_1_town} #Lioneye's Watch
     Hand in {quest|a1q4} #Breaking Some Eggs
 #endif
@@ -40,12 +38,12 @@ Take the {generic|Boat} ➞ {enter|1_1_4_1} #The Submerged Passage
 Hand in {quest|a1q7} #The Dweller of the Deep
 Hand in {quest|a1q2|a1q2b} #The Caged Brute
 {waypoint|1_1_7_1} #The Lower Prison
-#ifdef LEAGUE_START
+#ifdef TRIALS
     Complete {trial}
         #sub Usually {dir|45}
 #endif
 ➞ {enter|1_1_7_2} #The Upper Prison
-#ifdef LEAGUE_START
+#ifdef EXTRAS
     Find {generic|Chemist's Strongbox}
         #sub Look for map icon, access with nearby switch
         #sub High chance for {generic|Quicksilver Flask}

@@ -10,3 +10,4 @@ missing crafting area 2_8_5, Flask Duration - Rank 1
 missing crafting area 2_9_7, All Attributes - Rank 2
 missing crafting area EndGame_Labyrinth_boss_3, All Resistances - Rank 2
 unused waypoint 1_3_15
+unused waypoint 1_1_2
