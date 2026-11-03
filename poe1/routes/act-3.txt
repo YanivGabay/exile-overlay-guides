@@ -72,10 +72,10 @@ Hand in {quest|a3q8} #Sever the Right Hand
     #sub Go {dir|45}
 Get {waypoint_get}
     #sub Follow the road
+Get {crafting}
 #ifdef TRIALS
     Complete {trial}
         #sub Go {dir|0}
-    Get {crafting}
     {logout}
     {waypoint|1_3_15} #The Imperial Gardens
 #endif

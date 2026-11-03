@@ -419,6 +419,37 @@
       },
       "text": "Before Daresso: top up resistances and flasks; it is the hardest fight of Act 4 for many builds.",
       "source": "MXC"
+    },
+    {
+      "id": "recipe-ms",
+      "kind": "gear",
+      "when": {
+        "reachedArea": "1_3_1",
+        "maxAct": 5
+      },
+      "text": "You unlocked the bench Movement Speed craft (City of Sarn): add movement speed to boots that don't have it.",
+      "source": "poedb crafting bench (areas.json crafting_recipes)"
+    },
+    {
+      "id": "recipe-sockets",
+      "kind": "gear",
+      "when": {
+        "reachedArea": "1_4_5_2",
+        "maxAct": 6
+      },
+      "text": "The Grand Arena unlocked bench sockets: add up to 4 sockets to an item with Jeweller's Orbs.",
+      "source": "bench"
+    },
+    {
+      "id": "recipe-res",
+      "kind": "gear",
+      "when": {
+        "reachedArea": "1_4_6_2",
+        "minAct": 5,
+        "maxAct": 7
+      },
+      "text": "Bench resistance crafts are unlocked: use them to fix the 30% Kitava penalty on gear with a free suffix.",
+      "source": "poedb crafting bench (areas.json crafting_recipes), resist"
     }
   ],
   "labs": {
@@ -1426,5 +1457,14 @@
       ],
       "view": "full"
     }
-  ]
+  ],
+  "importantRecipes": {
+    "Movement Speed - Rank 1": "Bench movement speed onto your boots.",
+    "Socket Links - 2 to 4 Linked Sockets": "Bench a guaranteed 4-link (5 Orbs of Fusing).",
+    "Socket Numbers - 2 to 4 Sockets": "Bench up to 4 sockets on an item (Jeweller's Orbs).",
+    "All Resistances - Rank 1": "Bench all resistances: patch gaps after Kitava.",
+    "Elemental Resistances - Rank 2": "Bench elemental resistances.",
+    "Elemental Resistances - Rank 3": "Bench higher elemental resistances.",
+    "Double Resistances - Rank 1": "Bench two resistances at once."
+  }
 }
