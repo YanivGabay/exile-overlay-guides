@@ -170,7 +170,10 @@ for (const game of ["poe1"]) {
   const treeDir = join(ROOT, game, "tree");
   const treeFile = existsSync(treeDir) ? readdirSync(treeDir).filter((f) => f.endsWith(".json")).sort().at(-1) : undefined;
   const tree = treeFile ? readJson(join(treeDir, treeFile)) : null;
-  const content = { routes, data, campaign, tree };
+  // Vendor search terms generated from game data (tools/build_search.py).
+  const searchPath = join(ROOT, game, "search.json");
+  const search = existsSync(searchPath) ? readJson(searchPath) : null;
+  const content = { routes, data, campaign, tree, search };
   const hash = createHash("sha256").update(JSON.stringify(content)).digest("hex").slice(0, 12);
   const bundle = {
     schema: 1,
