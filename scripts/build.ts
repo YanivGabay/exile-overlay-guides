@@ -166,7 +166,11 @@ for (const game of ["poe1"]) {
     if (![...seen].some((k) => k.endsWith(msg)))
       console.warn(`[${game}] known warning no longer occurs, remove it: ${msg}`);
 
-  const content = { routes, data, campaign };
+  // Passive tree names for the newest game version we have (tools/build_tree.py).
+  const treeDir = join(ROOT, game, "tree");
+  const treeFile = existsSync(treeDir) ? readdirSync(treeDir).filter((f) => f.endsWith(".json")).sort().at(-1) : undefined;
+  const tree = treeFile ? readJson(join(treeDir, treeFile)) : null;
+  const content = { routes, data, campaign, tree };
   const hash = createHash("sha256").update(JSON.stringify(content)).digest("hex").slice(0, 12);
   const bundle = {
     schema: 1,
