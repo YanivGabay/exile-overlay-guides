@@ -517,7 +517,7 @@
     ],
     "1_2_3": [
       {
-        "text": "The Crossroads is a hub: its exits lead to The Broken Bridge, The Fellshrine Ruins, The Chamber of Sins and The Western Forest side. Grab the waypoint, you will come back here.",
+        "text": "The Crossroads is a hub: its exits lead to The Old Fields, The Broken Bridge, The Fellshrine Ruins and The Chamber of Sins. Grab the waypoint, you will come back here.",
         "verified": false,
         "sources": [],
         "confidence": "low",
@@ -791,7 +791,7 @@
     ],
     "1_2_7": [
       {
-        "text": "The waypoint and the exit both follow the road (SW from Crossroads). A Breach is often on the path here and is worth the XP and loot.",
+        "text": "Enter from The Forest Encampment; the waypoint and the exit both follow the road. A Breach is often on the path here and is worth the XP and loot.",
         "style": "all",
         "sources": [
           "EL",
@@ -1195,17 +1195,6 @@
         "verified": false
       }
     ],
-    "2_8_10": [
-      {
-        "text": "Follow the dead guards lying in doorways. The Legionnaires show as a book icon.",
-        "style": "all",
-        "sources": [
-          "EL"
-        ],
-        "confidence": "med",
-        "verified": false
-      }
-    ],
     "2_8_13": [
       {
         "text": "On the final return, ctrl+click the entrance to open a fresh instance for extra XP.",
@@ -1315,6 +1304,17 @@
         "style": "new/safe",
         "sources": [
           "MXC"
+        ],
+        "confidence": "med",
+        "verified": false
+      }
+    ],
+    "2_8_9": [
+      {
+        "text": "The Gemling Legionnaires are here. Follow the dead guards lying in doorways; the Legionnaires show as a book icon.",
+        "style": "all",
+        "sources": [
+          "EL"
         ],
         "confidence": "med",
         "verified": false
