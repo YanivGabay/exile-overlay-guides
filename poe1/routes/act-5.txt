@@ -1,8 +1,8 @@
 #section Act 5
 ➞ {enter|1_5_1} #The Slave Pens
 #ifdef FIVE_LINK
-    Clear the {generic|league encounter} in this zone: it has dropped a {generic|5-link body armour}
-        #sub Once per character (3.27 and 3.29). If nothing drops, re-running the zone can help
+    Clear the {generic|league encounter} in this zone: it dropped a {generic|5-link body armour} in 3.27 and 3.29
+        #sub Unconfirmed for 3.30's Coven rites. Once per character; if nothing drops, re-running the zone can help
 #endif
 Find and kill {kill|Overseer Krow}
     #sub Go {dir|180} until you find the hanged Karui
