@@ -1,6 +1,6 @@
 # Exile Overlay guides
 
-Leveling route content for [Exile Overlay](https://github.com/YanivGabay/exile-overlay).
+Leveling route content for [Exile Overlay](https://github.com/YanivGabay/exile-overlay), a free Path of Exile 1 leveling overlay.
 The app downloads the bundles built from this repo, so route fixes ship without an app release.
 
 ## Layout
@@ -9,9 +9,13 @@ The app downloads the bundles built from this repo, so route fixes ship without 
 poe1/
   manifest.json        game, game version, title
   routes/act-N.txt     the route, one file per act (route language below)
+  campaign.json        presets, reminders, zone tips, league tips, sources (every tip names its source)
+  search.json          vendor search patterns (links, movement speed, weapon bases)
+  tree/                passive tree data for the build import (from GGG's skilltree-export)
   data/*.json          areas, quests, gems, ... used to validate and render the route
   known-warnings.txt   accepted validator warnings; anything new fails the build
 scripts/build.ts       validates every option combination and writes dist/<game>.json
+tools/                 one-off generators for tree, search and tip data
 ```
 
 ## Route language (short)
@@ -35,7 +39,7 @@ repo (refresh with `scripts/pack-engine.sh` there).
 
 ## Contributing
 
-1. Edit a route file.
+1. Edit a route file or `campaign.json`. Tips that aren't checked in game yet get `"verified": false` (the overlay shows them as unconfirmed).
 2. `npm install`, then `npm run check`. It must pass.
 3. Open a pull request describing what was wrong in game (act, zone, what happened).
 
