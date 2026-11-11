@@ -1,0 +1,41 @@
+name: Guide error
+description: A route step, zone tip, league tip or reminder is wrong or missing.
+title: "Wrong step: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        In game, press **F6** and click **report** next to the step: it opens this form with the step, zone and guide version filled in.
+  - type: input
+    id: zone
+    attributes:
+      label: Act and zone
+      placeholder: "Act 2, The Western Forest"
+    validations:
+      required: true
+  - type: input
+    id: step
+    attributes:
+      label: Step
+      description: The step id from "report", or the step's text.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What's wrong in game?
+      description: What the guide said, and what's actually there (a different exit, a quest that isn't there, a tip that's wrong for this league).
+    validations:
+      required: true
+  - type: input
+    id: guide
+    attributes:
+      label: Guide version
+      description: Filled in by "report". Otherwise Settings → Guide & build, bottom line.
+  - type: textarea
+    id: options
+    attributes:
+      label: Route options
+      description: Filled in by "report" (preset, bandits, trials and so on).
+      render: text

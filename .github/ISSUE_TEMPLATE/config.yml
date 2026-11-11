@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Bug in the overlay app
+    url: https://github.com/YanivGabay/exile-overlay/issues/new?template=bug_report.yml
+    about: The overlay doesn't show up, crashes, or a button doesn't work.
+  - name: Feature idea
+    url: https://github.com/YanivGabay/exile-overlay/issues/new?template=feature_idea.yml
+    about: Something the overlay should do.
