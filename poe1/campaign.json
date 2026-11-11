@@ -17,7 +17,8 @@
     "maps": "maxroll.gg/poe/getting-started/atlas-explained (Kirac on Karui Shores gives a map device)",
     "zone-tips": "Written by the Exile Overlay team. 'verified: false' = not yet checked in game; the overlay labels them 'unchecked'. Never copied from other guides (Cyclon, Mobalytics, XileHUD are unlicensed or GPL).",
     "covens-faq": "https://www.pathofexile.com/forum/view-thread/4013527 (official Covens of Umbra FAQ, 2026-11-10)",
-    "covens-reveal": "ExileCon 2026 reveal coverage: https://maxroll.gg/poe/news/3-30-covens-of-umbra-reveal-summary and https://www.pcgamesn.com/path-of-exile/3-30-covens-of-umbra-exilecon-2026 (not patch notes; patch notes due 2026-11-11 NZT)"
+    "covens-reveal": "ExileCon 2026 reveal coverage: https://maxroll.gg/poe/news/3-30-covens-of-umbra-reveal-summary and https://www.pcgamesn.com/path-of-exile/3-30-covens-of-umbra-exilecon-2026 (not patch notes; patch notes due 2026-11-11 NZT)",
+    "patch-330": "https://www.pathofexile.com/forum/view-thread/4013680 (official 3.30.0 patch notes, 2026-11-11)"
   },
   "skillPointQuests": {
     "a1q7": {
@@ -147,10 +148,26 @@
         "source": "poetools"
       },
       {
+        "id": "mercenary-res",
+        "act": 6,
+        "kind": "info",
+        "text": "Hired mercenaries now take -30% to all resistances in areas of level 46 to 67 (from The Mud Flats in Act 6), and -60% from level 68.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
         "id": "covens-rites",
         "act": 1,
         "kind": "info",
-        "text": "New league, Covens of Umbra: Coven rites appear from the first zones. Disrupt a rite to take a Fate, then put up to 3 Fates on a zone's boss to make the fight harder and its rewards better. Later zones have more rites.",
+        "text": "New league, Covens of Umbra: covenites perform rites in the zones. Disrupt a rite to choose a Fate for that zone's boss: each Fate makes the fight harder and its rewards better.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "covens-rites-detail",
+        "act": 1,
+        "kind": "info",
+        "text": "Reveal coverage said rites start in the first zones and a boss can take up to 3 Fates; the patch notes don't say.",
         "source": "covens-reveal",
         "verified": false
       },
@@ -164,7 +181,14 @@
       {
         "id": "covens-wickerman",
         "kind": "info",
-        "text": "Fated bosses can drop limb trophies. Infuse them into the Wickerman for a permanent buff (head, body, arm and leg slots). The campaign only drops the lower tiers; the best ones come from maps.",
+        "text": "Bosses with Fates drop Viscera. Put them on your Wickerman to keep a piece of that boss's power.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "covens-wickerman-detail",
+        "kind": "info",
+        "text": "Reveal coverage said the Wickerman has head, body, arm and leg slots, and the campaign only drops the lower tiers of Viscera.",
         "source": "covens-reveal",
         "verified": false
       },
@@ -172,29 +196,53 @@
         "id": "covens-brutus",
         "act": 1,
         "kind": "loot",
-        "text": "Fated Brutus can drop the Warden's Arm trophy (more maximum life): worth a Fate or two if you're comfortable on him.",
+        "text": "Fated Brutus can drop Viscera for the Wickerman's arm (more maximum life): worth a Fate or two if you're comfortable on him.",
         "source": "covens-reveal",
         "verified": false
       },
       {
         "id": "tiered-drops",
         "kind": "info",
-        "text": "Magic and rare items now drop with a tier: higher tiers have more sockets and links. Check the tier of body armours and weapons for links.",
-        "source": "covens-reveal",
-        "verified": false
+        "text": "From Act 6 on, magic and rare items can drop with an item tier (2 to 5). Higher tiers mean better odds of more sockets and links, a better base and quality; tier 5 can add +1 item level. Check the tier of body armours and weapons for links.",
+        "source": "patch-330",
+        "verified": true,
+        "act": 6
+      },
+      {
+        "id": "vendors-330",
+        "kind": "info",
+        "text": "3.30 vendors: Scrolls of Wisdom cost 15 gold in every town; skill gems with a level requirement of 34 to 37 now cost an Orb of Alchemy (was an Orb of Chance); gambling is cheaper in the mid-campaign.",
+        "source": "patch-330",
+        "verified": true
       },
       {
         "id": "layouts-330",
         "kind": "info",
-        "text": "Some campaign zones got new layouts in 3.30, and over 20 zones got a new boss. Layout tips may be out of date: press F6 and use report if one is wrong.",
+        "text": "Reveal coverage said some campaign zones got new layouts and over 20 zones got a new boss; the patch notes don't list them. Layout tips may be out of date: press F6 and use report if one is wrong.",
         "source": "covens-reveal",
         "verified": false
+      },
+      {
+        "id": "act7-wildwood",
+        "act": 7,
+        "kind": "info",
+        "text": "The Northern Forest and The Dread Thicket can spawn the Viridian Wildwood.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "act9-mirage",
+        "act": 9,
+        "kind": "info",
+        "text": "The Vastiri Desert and The Oasis can spawn a Mirage.",
+        "source": "patch-330",
+        "verified": true
       },
       {
         "id": "5l-slave-pens",
         "area": "1_5_1",
         "kind": "loot",
-        "text": "5-link chance: the league encounter in this zone dropped a 5-link body armour once in 3.27 and 3.29. 3.29's league (Allflame) is gone, so check whether this zone's Coven rite does the same.",
+        "text": "5-link chance: the league encounter in this zone dropped a 5-link body armour in 3.27 and 3.29. The 3.30 patch notes don't mention it, so check whether this zone's Coven rite does the same.",
         "source": "5l-forum, 5l-329",
         "verified": false
       },
@@ -202,14 +250,14 @@
         "id": "5l-act6-strand",
         "area": "2_6_1",
         "kind": "loot",
-        "text": "Second 5-link chance: the league encounter here dropped a 5-link body armour in 3.27 and 3.29. Not yet known for 3.30's Coven rites.",
+        "text": "Second 5-link chance: the league encounter here dropped a 5-link body armour in 3.27 and 3.29. The 3.30 patch notes don't mention it.",
         "source": "5l-forum, 5l-329",
         "verified": false
       },
       {
         "id": "link-plan",
         "kind": "plan",
-        "text": "Link plan: Tabula Rasa (6-link, level 3) as soon as you can trade; bench a 4-link after Kaom's Stronghold (Act 4, 5 fusings); watch for high-tier body armours (more links). The 5-link drops in The Slave Pens and Act 6 Twilight Strand are unconfirmed for 3.30; otherwise fuse a 5-6 socket armour (~150 fusings).",
+        "text": "Link plan: Tabula Rasa (6-link, level 3) as soon as you can trade; bench a 4-link after Kaom's Stronghold (Act 4, 5 fusings); from Act 6, watch for high-tier body armours (more links). The 5-link drops in The Slave Pens and Act 6 Twilight Strand are unconfirmed for 3.30; otherwise fuse a 5-6 socket armour (~150 fusings).",
         "source": "poedb crafting bench, 5l-forum, 5l-329, covens-reveal",
         "verified": false
       }
