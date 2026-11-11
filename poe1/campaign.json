@@ -15,7 +15,10 @@
     "flasks": "maxroll / poe-vault leveling guides: Act 8 freeze (Lunaris side), Act 9 Belly of the Beast bleed; flask suffixes 'of Heat' (freeze immunity) and 'of Staunching' (bleed removal)",
     "labs": "poedb area levels: Normal 33, Cruel 55, Merciless 68; creator guides: Normal lab after Act 3, Cruel after Act 7, Merciless after Act 10",
     "maps": "maxroll.gg/poe/getting-started/atlas-explained (Kirac on Karui Shores gives a map device)",
-    "zone-tips": "Written by the Exile Overlay team. 'verified: false' = not yet checked in game; the overlay labels them 'unchecked'. Never copied from other guides (Cyclon, Mobalytics, XileHUD are unlicensed or GPL)."
+    "zone-tips": "Written by the Exile Overlay team. 'verified: false' = not yet checked in game; the overlay labels them 'unchecked'. Never copied from other guides (Cyclon, Mobalytics, XileHUD are unlicensed or GPL).",
+    "covens-faq": "https://www.pathofexile.com/forum/view-thread/4013527 (official Covens of Umbra FAQ, 2026-11-10)",
+    "covens-reveal": "ExileCon 2026 reveal coverage: https://maxroll.gg/poe/news/3-30-covens-of-umbra-reveal-summary and https://www.pcgamesn.com/path-of-exile/3-30-covens-of-umbra-exilecon-2026 (not patch notes; patch notes due 2026-11-11 NZT)",
+    "patch-330": "https://www.pathofexile.com/forum/view-thread/4013680 (official 3.30.0 patch notes, 2026-11-11)"
   },
   "skillPointQuests": {
     "a1q7": {
@@ -131,8 +134,8 @@
     }
   ],
   "league": {
-    "id": "3.29",
-    "name": "Curse of the Allflame",
+    "id": "3.30",
+    "name": "Covens of Umbra",
     "notes": [
       {
         "id": "white-sockets",
@@ -145,10 +148,101 @@
         "source": "poetools"
       },
       {
+        "id": "mercenary-res",
+        "act": 6,
+        "kind": "info",
+        "text": "Hired mercenaries now take -30% to all resistances in areas of level 46 to 67 (from The Mud Flats in Act 6), and -60% from level 68.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "covens-rites",
+        "act": 1,
+        "kind": "info",
+        "text": "New league, Covens of Umbra: covenites perform rites in the zones. Disrupt a rite to choose a Fate for that zone's boss: each Fate makes the fight harder and its rewards better.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "covens-rites-detail",
+        "act": 1,
+        "kind": "info",
+        "text": "Reveal coverage said rites start in the first zones and a boss can take up to 3 Fates; the patch notes don't say.",
+        "source": "covens-reveal",
+        "verified": false
+      },
+      {
+        "id": "covens-fate-advice",
+        "kind": "plan",
+        "text": "Only add Fates to bosses you already kill easily: matching Fates stack. In hardcore, leave act bosses un-Fated until your character is clearly ahead.",
+        "source": "covens-reveal",
+        "verified": false
+      },
+      {
+        "id": "covens-wickerman",
+        "kind": "info",
+        "text": "Bosses with Fates drop Viscera. Put them on your Wickerman to keep a piece of that boss's power.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "covens-wickerman-detail",
+        "kind": "info",
+        "text": "Reveal coverage said the Wickerman has head, body, arm and leg slots, and the campaign only drops the lower tiers of Viscera.",
+        "source": "covens-reveal",
+        "verified": false
+      },
+      {
+        "id": "covens-brutus",
+        "act": 1,
+        "kind": "loot",
+        "text": "Fated Brutus can drop Viscera for the Wickerman's arm (more maximum life): worth a Fate or two if you're comfortable on him.",
+        "source": "covens-reveal",
+        "verified": false
+      },
+      {
+        "id": "tiered-drops",
+        "kind": "info",
+        "text": "From Act 6 on, magic and rare items can drop with an item tier (2 to 5). Higher tiers mean better odds of more sockets and links, a better base and quality; tier 5 can add +1 item level. Check the tier of body armours and weapons for links.",
+        "source": "patch-330",
+        "verified": true,
+        "act": 6
+      },
+      {
+        "id": "vendors-330",
+        "kind": "info",
+        "text": "3.30 vendors: Scrolls of Wisdom cost 15 gold in every town; skill gems with a level requirement of 34 to 37 now cost an Orb of Alchemy (was an Orb of Chance); gambling is cheaper in the mid-campaign.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "layouts-330",
+        "kind": "info",
+        "text": "Reveal coverage said some campaign zones got new layouts and over 20 zones got a new boss; the patch notes don't list them. Layout tips may be out of date: press F6 and use report if one is wrong.",
+        "source": "covens-reveal",
+        "verified": false
+      },
+      {
+        "id": "act7-wildwood",
+        "act": 7,
+        "kind": "info",
+        "text": "The Northern Forest and The Dread Thicket can spawn the Viridian Wildwood.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
+        "id": "act9-mirage",
+        "act": 9,
+        "kind": "info",
+        "text": "The Vastiri Desert and The Oasis can spawn a Mirage.",
+        "source": "patch-330",
+        "verified": true
+      },
+      {
         "id": "5l-slave-pens",
         "area": "1_5_1",
         "kind": "loot",
-        "text": "5-link chance: clear the league encounter in this zone. In 3.27 and 3.29 it dropped a 5-link body armour once (not in 3.28). If nothing drops, re-running the zone can help.",
+        "text": "5-link chance: the league encounter in this zone dropped a 5-link body armour in 3.27 and 3.29. The 3.30 patch notes don't mention it, so check whether this zone's Coven rite does the same.",
         "source": "5l-forum, 5l-329",
         "verified": false
       },
@@ -156,15 +250,15 @@
         "id": "5l-act6-strand",
         "area": "2_6_1",
         "kind": "loot",
-        "text": "Second 5-link chance: clear the league encounter in this zone (dropped a 5-link body armour once in 3.27 and 3.29).",
+        "text": "Second 5-link chance: the league encounter here dropped a 5-link body armour in 3.27 and 3.29. The 3.30 patch notes don't mention it.",
         "source": "5l-forum, 5l-329",
         "verified": false
       },
       {
         "id": "link-plan",
         "kind": "plan",
-        "text": "Link plan: Tabula Rasa (6-link, level 3) as soon as you can trade; bench a 4-link after Kaom's Stronghold (Act 4, 5 fusings); the league encounters in The Slave Pens (Act 5) and Act 6 Twilight Strand have dropped a 5-link body armour; otherwise fuse a 5-6 socket armour (~150 fusings).",
-        "source": "poedb crafting bench, 5l-forum, 5l-329",
+        "text": "Link plan: Tabula Rasa (6-link, level 3) as soon as you can trade; bench a 4-link after Kaom's Stronghold (Act 4, 5 fusings); from Act 6, watch for high-tier body armours (more links). The 5-link drops in The Slave Pens and Act 6 Twilight Strand are unconfirmed for 3.30; otherwise fuse a 5-6 socket armour (~150 fusings).",
+        "source": "poedb crafting bench, 5l-forum, 5l-329, covens-reveal",
         "verified": false
       }
     ]
@@ -468,14 +562,15 @@
     "source": "labs"
   },
   "mapsChecklist": {
-    "source": "maps, labs, resist",
+    "source": "maps, labs, resist, covens-faq",
     "items": [
       "Talk to Kirac on Karui Shores: he gives you a map device for your hideout.",
       "Run Merciless Labyrinth (area level 68) if you haven't.",
       "Cap your elemental resistances: you are at -60% now.",
       "Set your pantheon gods (talk to Sin) and upgrade them with a Divine Vessel later.",
       "Switch your loot filter to a stricter level once mapping (NeverSink switches to endgame rules at item level 68 by itself).",
-      "Start your atlas passive tree: complete each new map for bonus objectives."
+      "Start your atlas passive tree: complete each new map for bonus objectives.",
+      "Scarabs are gone in 3.30: Threads replace them (up to 3 types per map), and Thread mechanics only appear if you opt in."
     ]
   },
   "zoneTips": {
@@ -1382,7 +1477,7 @@
     {
       "id": "league-start",
       "name": "League start",
-      "description": "Passive-point quests, Labyrinth trials, both Quicksilver flasks and the two 5-link league encounters. Side content off.",
+      "description": "Passive-point quests, Labyrinth trials, both Quicksilver flasks and the two 5-link league encounters (unconfirmed for 3.30). Side content off.",
       "options": {
         "leagueStart": true,
         "library": false,
@@ -1402,7 +1497,7 @@
     {
       "id": "speedrun",
       "name": "Speedrun / alt character",
-      "description": "Passive-point quests and the 5-link encounters only. No trials (already done this league), no flask detours, logout after bosses.",
+      "description": "Passive-point quests and the 5-link encounters (unconfirmed for 3.30) only. No trials (already done this league), no flask detours, logout after bosses.",
       "options": {
         "leagueStart": false,
         "library": false,

@@ -2,8 +2,8 @@
 ➞ {enter|2_6_town} #Lioneye's Watch
 ➞ {enter|2_6_1} #The Twilight Strand
 #ifdef FIVE_LINK
-    Clear the {generic|league encounter} in this zone: it has dropped a {generic|5-link body armour}
-        #sub Once per character (3.27 and 3.29). If nothing drops, re-running the zone can help
+    Clear the {generic|league encounter} in this zone: it dropped a {generic|5-link body armour} in 3.27 and 3.29
+        #sub Unconfirmed for 3.30's Coven rites. Once per character; if nothing drops, re-running the zone can help
 #endif
 Kill {kill|Everything}
 {logout}
