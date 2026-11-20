@@ -7,3 +7,8 @@ the exile-overlay repository's THIRD_PARTY_NOTICES.md.
 
 Content policy: only add material you wrote yourself or that is under a compatible open
 license. Do not copy text, routes, or images from other guides, videos, or websites.
+
+3.30 gem additions (`tools/refresh_gems.py`) use gem ids, names and levels from
+[RePoE](https://github.com/repoe-fork/repoe) (MIT License, Copyright (c) 2016 brather1ng),
+export 3.30.0.4, and vendor rewards from the PoE wiki's `vendor_rewards` table, the same
+source exile-leveling uses.

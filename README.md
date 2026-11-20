@@ -15,7 +15,7 @@ poe1/
   data/*.json          areas, quests, gems, ... used to validate and render the route
   known-warnings.txt   accepted validator warnings; anything new fails the build
 scripts/build.ts       validates every option combination and writes dist/<game>.json
-tools/                 one-off generators for tree, search and tip data
+tools/                 generators for tree, search, tip and gem data (refresh_gems.py after a patch)
 ```
 
 ## Route language (short)

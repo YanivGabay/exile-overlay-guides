@@ -4866,7 +4866,7 @@
   },
   "Metadata/Items/Gems/SkillGemCallOfTheWild": {
     "id": "Metadata/Items/Gems/SkillGemCallOfTheWild",
-    "name": "[DNT] Call of the Wild",
+    "name": "[DNT - UNUSED] Call of the Wild",
     "primary_attribute": "dexterity",
     "required_level": 28,
     "is_support": false
@@ -5919,6 +5919,13 @@
     "name": "Pact of Lycia",
     "primary_attribute": "none",
     "required_level": 24,
+    "is_support": false
+  },
+  "Metadata/Items/Gems/SkillGemArcaneLink": {
+    "id": "Metadata/Items/Gems/SkillGemArcaneLink",
+    "name": "Arcane Link",
+    "primary_attribute": "intelligence",
+    "required_level": 34,
     "is_support": false
   }
 }
