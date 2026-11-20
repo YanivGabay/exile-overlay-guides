@@ -7702,6 +7702,11 @@
             "classes": [
               "Scion"
             ]
+          },
+          "Metadata/Items/Gems/SkillGemArcaneLink": {
+            "classes": [
+              "Scion"
+            ]
           }
         },
         "vendor": {
@@ -7890,6 +7895,15 @@
               "Templar",
               "Shadow",
               "Scion"
+            ],
+            "npc": "Petarus and Vanja"
+          },
+          "Metadata/Items/Gems/SkillGemArcaneLink": {
+            "classes": [
+              "Duelist",
+              "Marauder",
+              "Scion",
+              "Templar"
             ],
             "npc": "Petarus and Vanja"
           }
@@ -10117,6 +10131,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemSpellDamageAura": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SkillGemArcaneLink": {
             "classes": [],
             "npc": "Lilly Roth"
           }
